@@ -1,0 +1,130 @@
+<DOCTYPE HTML>
+<html>
+    <head>
+        <script>
+        var stuffSet;
+        var Stuff;
+        var CheckBoxAns;
+        var CheckBox1;
+        var CheckBox2;    
+        var abcd;
+                            var WhichExecutor;
+            
+            function Conj(verify,notJe)
+                        {
+                            stuffSet = (document.getElementById(verify))
+                            Stuff = String((document.getElementById(String.prototype.concat(verify,"_answer"))).textContent).toLowerCase()
+                            console.log(Stuff)
+                            console.log(stuffSet.value)
+                            if(!notJe){
+                                console.log('Is Je')
+
+                            
+                            CheckBoxAns = Boolean(document.getElementById((verify + '_JeouJ')).textContent)
+                            }
+                                if(stuffSet.disabled == false){
+                                    console.log('It\'s not disabled.')
+                                    if (!notJe && (!(Stuff == (stuffSet.value).toLowerCase())))
+                                        {
+                                            stuffSet.value = "Ouf... Mauvais réponse...";
+                                            stuffSet.disabled = false;
+                                            document.getElementById(String.prototype.concat(verify,"_J")).disabled = true
+                                            document.getElementById(String.prototype.concat(verify,"_Je")).disabled = true
+                                        }
+                                        if(!notJe)
+                                        {
+
+                                        
+                                        if(CheckBoxAns == (!((Boolean(document.getElementById(String.prototype.concat(verify,"_J")).checked) && !(Boolean(document.getElementById(String.prototype.concat(verify,"_Je")).checked))))) && Stuff == (stuffSet.value).toLowerCase())
+                                        {
+                                            stuffSet.disabled = true;
+                                        }
+                                        
+                                            stuffSet.disabled = true;
+                                            document.getElementById(String.prototype.concat(verify,"_J")).disabled = true
+                                            document.getElementById(String.prototype.concat(verify,"_Je")).disabled = true
+                                        }
+                                    if(!(Stuff == (stuffSet.value).toLowerCase()))
+                                {
+                                            stuffSet.value = "Ouf... Mauvais réponse...";
+                                            stuffSet.disabled = true;
+                                            console.log('It\'s incorrect')
+                                }
+                                    if(String(stuffSet.value).toLowerCase() == String(Stuff).toLowerCase())
+                                {
+                                    console.log(4)
+                                    if(!(notJe))
+                                {
+                                    console.log(5)
+                                    var abc;
+                                    abc = CheckBoxAns == (((Boolean(document.getElementById(String.prototype.concat(verify,"_J")).checked) && !(Boolean(document.getElementById(String.prototype.concat(verify,"_Je")).checked)))))
+                                    if(!abc)
+                                {
+                                    stuffSet.value = "Mauvais utilisation de je/j\'"
+                                }
+                                    if(abc)
+                                {
+                                    console.log(6)
+                                    console.log("The IF ran OK")
+                                stuffSet.value = "Bravo!";
+                                stuffSet.disabled = true;
+                                }
+                            }
+                                if(notJe)
+                                {
+                                    console.log('Not Je')
+                                stuffSet.disabled = false;
+                                stuffSet.value = "Bravo!";
+                                stuffSet.disabled = true;
+                                }
+                            }
+                            if (!notJe && notJe)
+                                {
+                                    if((document.getElementById(stuffSet + "_Je")).checked && (document.getElementById(stuffSet + "_J")).checked)
+                                {
+                                    stuffSet.value = "Ne fait pas les deux versions de Je."
+                                stuffSet.disabled = false
+                                }
+                                if(!((document.getElementById(stuffSet + "_Je")).checked) && (!(document.getElementById(stuffSet + "_J")).checked))
+                                {
+                                    stuffSet.value = "N'oublie pas de faire un des deux versions de Je."
+                                    stuffSet.disabled = false
+                                }
+                                }
+                                
+                            }
+                        }
+        </script>
+        <style>
+            AnswerSheet{
+                opacity:0%;
+                size:0px;
+                user-select: none;
+            }
+        </style>
+    </head>
+<body>
+<PracticeWord>
+Indicatif présent, aimer<br>
+</PracticeWord>
+<div id="EnterIn">
+<input type="checkbox" id="JeAimerIP_Je"> <AnswerSheet>.....</AnswerSheet> <input type="checkbox" id="JeAimerIP_J"><br>
+Je (ou) J' <input type="input" id="JeAimerIP" value="Écrit ici."><go onclick="Conj('JeAimerIP',false)">GO</go><br>
+Tu <input type="input" id="TuAimerIP" value="Écrit ici."><go onclick="Conj('TuAimerIP',true)">GO</go><br>
+Il <input type="input" id="IlAimerIP" value="Écrit ici."><go onclick="Conj('IlAimerIP',true)">GO</go><br>
+Nous <input type="input" id="NousAimerIP" value="Écrit ici."><go onclick="Conj('NousAimerIP',true)">GO</go><br>
+Ils <input type="input" id="IlsAimerIP" value="Écrit ici."><go onclick="Conj('IlsAimerIP',true)">GO</go><br>
+</div>
+<br>
+<br>
+<AnswerSheet>
+    <div id="JeAimerIP_JeouJ">true</div>
+    <div id="JeAimerIP_answer">aime</div>
+    <div id="TuAimerIP_answer">aimes</div>
+    <div id="IlAimerIP_answer">aime</div>
+    <div id="NousAimerIP_answer">aimons</div>
+    <div id="VousAimerIP_answer">aimez</div>
+    <div id="IlsAimerIP_answer">aiment</div>
+</AnswerSheet>
+</body>
+</html>
